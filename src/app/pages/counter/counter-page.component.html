@@ -1,0 +1,9 @@
+
+ <h1>Counter: {{ counter }}</h1>
+ <h1>Counter Signal: {{ counterSignal() }}</h1>
+    <hr />
+
+    <!-- //AL BOTÓN SE LE PONE EL CLICK Y AL PULSAR SE INCREMENTA EN 1 EL COUNT -->
+    <button (click)="increasedBy(1)">+1</button>
+    <button (click)="decrementBy(1)">-1</button>
+    <button (click)="resetCounter()">Reset</button>
