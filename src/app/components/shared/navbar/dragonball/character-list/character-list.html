@@ -1,0 +1,31 @@
+<h3>{{ listName() }}</h3>
+    <ul>
+    <!--
+        CREAMOS LA VARIABLE character Y QUE RECORRA LOS characters[],
+        LUEGO LOS CLASIFICA POR id, CREAMOS LA VARIABLE idx PARA QUE NOS COLOQUE EL ÍNDICE
+        AL LADO DE CADA UNO DE LOS PERSONAJES, Y ABAJO EN EL span LE DECIMOS QUE ESE ÍNDICE
+        COMIENCE POR EL NÚMERO 1, YA QUE NORMALMENTE EMPIEZA POR 0, DE AHÍ EL idx +1
+      -->
+      @for (character of characters(); track character.id; let idx = $index) {
+        <!--SE PUEDE CREAR UN IF/ELSE EN UN HTML DE ESTA MANERA-->
+        @if( character.power > 500 ) {
+
+           <li>
+          <span> {{ idx +1 }} - {{ character.name }} </span>
+          <!--
+              CREAMOS UNA CLASE "class.text.danger" POR SI EL PODER
+              SUPERA LOS "9000" DE FUERZA, ME LO COLOREE DE ROJO,
+              Y SI ES MENOR DE "9000" ME LO PINTE DE AZUL
+           -->
+          <strong
+            [class.text-danger] = "character.power > 9000"
+            [class.text-primary] = "character.power < 9000"
+          >
+            ({{ character.power }}) </strong>
+        </li>
+
+        }@else {
+          <li><strong>Aqui no hay nadie con suficiente poder</strong></li>
+        }
+      }
+    </ul>

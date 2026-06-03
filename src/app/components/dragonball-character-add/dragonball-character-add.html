@@ -1,0 +1,33 @@
+
+
+ <h3>Agregar: {{ name() }}</h3>
+
+    <!--
+      LE ASIGNAMOS A [value] LA signal name() PARA A CONTINUACIÓN
+      CREAR UN EVENTO (change) QUE HACE QUE AL TERMINAR DE ESCRIBIR
+      EN MI FORMULARIO SE ACTUALICE EL DATO name() Y ME LO SETEE EN
+      LA PROPIEDAD txtName CREADA ABAJO
+      Y TAMBIÉN CREAMOS UN EVENTO (input) PARA QUE CONFORME ESCRIBAMOS
+      EN EL FORMULARIO, SE VAYAN GUARDANDO LOS DATOS DEL name()
+    -->
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Nombre"
+    [value]="name()"
+    (change)="name.set( txtName.value )"
+    (input)="name.set(txtName.value)"
+    #txtName
+    >
+
+    <input
+    type="number"
+    class="form-control mt-2"
+    placeholder="Poder"
+    [value]="power()"
+    (change)="power.set(intPower.valueAsNumber || 0)"
+    (input)="power.set(intPower.valueAsNumber || 0)"
+    #intPower
+    >
+
+    <button (click)="addCharacter()" class="mt-2 btn btn-primary">Agregar</button>

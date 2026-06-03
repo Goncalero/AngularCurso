@@ -1,0 +1,35 @@
+
+<h1> DRAGONBALL SUPER</h1>
+
+<!-- hr SE UTILIZA PARA HACER UN SALTO DE LÍNEA -->
+<hr>
+
+<section class="row">
+
+  <div class="col-12 col-sm-6">
+
+    <!-- dragonball-character-add -->
+    <!-- Hasta aqui -->
+
+    <dragonball-character-add />
+
+  </div>
+
+  <!-- AQUI APRENDEMOS A UTILIZAR EL @for PARA signal() -->
+  <div class="col-12 col-sm-6">
+
+    <!-- IMPORTANTEEEEEEEEE -->
+    <!--
+        EL COMPONENTE PADRE QUE ES ESTE ARCHIVO, LE MANDA LA INFORMACIÓN
+        DE LOS PERSONAJES "characters()" Y EL QUE RECIBE ESA INFO ES
+        [characters] DEL ARCHIVO "character-list.ts"
+     -->
+    <dragonball-character-list
+      listName="Listado de personajes"
+
+    [characters]=" characters()"/>
+
+  </div>
+
+
+</section>
